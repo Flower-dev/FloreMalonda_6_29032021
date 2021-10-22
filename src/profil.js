@@ -229,15 +229,16 @@ class PhotographerProfil {
     }
 
     renderLightBox() {
-        const lightboxdom = document.querySelector('.lightbox')
+        let lightboxdom = document.querySelector('.lightbox')
         if(lightboxdom) {
             lightboxdom.remove()
         }
-        document.body.innerHTML += this.lightbox.render()
+        lightboxdom = document.createElement('div');
+        lightboxdom.innerHTML = this.lightbox.render()
+        document.body.appendChild(lightboxdom)
     }
 
     renderModal() {
-        // const modaldom = document.querySelector('.modal')
         document.body.innerHTML += this.modal.render();
     }
 
@@ -245,9 +246,7 @@ class PhotographerProfil {
     * Création du DOM physique
     */
     renderDOM() {
-
         const topprofil= new TopProfil();
-        
         this.infoBlock = new InfoBlock(
             this.sumLikes(),
             this.photographer.price
