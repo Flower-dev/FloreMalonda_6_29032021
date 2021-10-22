@@ -31,9 +31,13 @@ class Index {
   }
 
   filterByTags(tag){
-    const photographersFilter = this.photographers.filter((photographer) => {
-      return photographer.tags.includes(tag)
-    })
+    let photographersFilter = this.photographers
+     if(tag){
+       photographersFilter = this.photographers.filter((photographer) => {
+         return photographer.tags.includes(tag)
+       })
+
+     }
     this.renderPhotographersDOM(photographersFilter);
   }
 
