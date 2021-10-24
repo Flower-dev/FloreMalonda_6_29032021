@@ -21,7 +21,8 @@ class Card {
     render() {
         const likesBtn = document.createElement('button')
         likesBtn.classList.add('likes-btn')
-        likesBtn.innerHTML = `<i  data-index='${this.idx}' class='likes-btn fas fa-heart'></i>`
+        likesBtn.setAttribute('data-index', this.idx)
+        likesBtn.innerHTML = `<i class='likes-btn fas fa-heart'></i>`
 
 
         document.addEventListener('click', (e) => {
