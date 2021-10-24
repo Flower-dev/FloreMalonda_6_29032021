@@ -13,6 +13,7 @@ class PhotographerProfil {
         this.photographer = {};
         this.media = [];
         this.cards = [];
+        this.isLightboxOpened = false;
         (async () => {
             await this.loadData();
             this.createLightbox();
@@ -42,7 +43,7 @@ class PhotographerProfil {
 
     createLightbox() {
         this.lightbox = new LightBox(
-            this.closeLightbox,
+            () => this.closeLightbox(),
             this.media
         );
     }
@@ -120,6 +121,11 @@ class PhotographerProfil {
     }
 
     openLightbox(idx) {
+        //On évite d'ouvrir la lightbox 2x
+        if(this.isLightboxOpened){
+            return;
+        }
+        this.isLightboxOpened = true
         this.lightbox.idx = idx;
         const lbxbg = document.querySelector('.lightbox');
         const bodybg = document.querySelector('#bodyprofil');
@@ -137,6 +143,8 @@ class PhotographerProfil {
         const bodybg = document.querySelector('#bodyprofil');
         lbxbg.style.display = 'none';
         bodybg.style.overflow = 'scroll';
+        this.isLightboxOpened = false
+        console.log(this.isLightboxOpened)
     }
 
     
@@ -167,6 +175,17 @@ class PhotographerProfil {
         document.addEventListener('click', (e) => {
             if (e.target.classList[0] == 'likes-btn'){
                 this.addLikes (parseInt(e.target.dataset.index))
+            }
+        })
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('media')) {
+                this.openLightbox(parseInt(e.target.dataset.index))
+            }
+        })
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && e.target.classList.contains('media')) {
+                this.openLightbox(parseInt(e.target.dataset.index))
             }
         })
     }
@@ -205,7 +224,6 @@ class PhotographerProfil {
         this.cards = this.media.map((media, idx) => {
             return new Card(
                 media,
-                this.openLightbox.bind(this),
                 idx,
                 (idx) => this.addLikes(idx),
             );
