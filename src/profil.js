@@ -173,7 +173,7 @@ class PhotographerProfil {
 
     bindEvents(){
         document.addEventListener('click', (e) => {
-            if (e.target.classList[0] == 'likes-btn'){
+            if (e.target.classList.contains('likes-btn')){
                 this.addLikes (parseInt(e.target.dataset.index))
             }
         })

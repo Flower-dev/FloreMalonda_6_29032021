@@ -16,7 +16,7 @@ class Card {
         const likesBtn = document.createElement('button')
         likesBtn.classList.add('likes-btn')
         likesBtn.setAttribute('data-index', this.idx)
-        likesBtn.innerHTML = `<i class='likes-btn fas fa-heart'></i>`
+        likesBtn.innerHTML = `<i class='likes-btn fas fa-heart' data-index="${this.idx}"></i>`
 
         const media = new Media(this.media, this.idx)
 
