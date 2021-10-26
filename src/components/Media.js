@@ -14,7 +14,7 @@ class Media {
                 `
                 <div class='mediacontainer'>
                 <img role='button' tabindex="0" class='media' data-index='${this.idx}' width='100%' src='public/img/photos/${this.media.image}' loading='lazy' alt='photo'>
-                    <div class='card_description' aria-label='titre de la photographie'>
+                    <div class='card_description'>
                         ${this.media.description}
                     </div>
                 </div>
@@ -28,7 +28,7 @@ class Media {
                     <video tabindex="0" role='button' controls class='media' data-index='${this.idx}' width='100%'>
                         <source src='public/img/photos/${this.media.video}' type='video/mp4'>
                     </video>
-                    <div class='card_description' aria-label='titre de la photographie'>
+                    <div class='card_description'>
                         ${this.media.description}
                     </div>
                 </div>

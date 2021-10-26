@@ -14,13 +14,13 @@ class NavHome {
             <section class='topBar-disposition maxcontainer'>
 
                 <div class='TopBar' role='lien'>
-                    <a aria-label='Retour à la page principale' href='index.html' class='header-png'>
+                    <a aria-label='Retour' href='index.html' class='header-png'>
                         <img role='img' alt='Fisheye Home page' src='public/img/logo.png'/>
                     </a>   
                 </div>
 
                 <div class='disposition'>
-                    <nav class='NavHome' role='navigation' aria-label='catégories'>
+                    <nav class='NavHome' role='navigation'>
                         <ul class='NavHome_tags'>
                             <li class='NavHome_tag'>
                                 <a href='#portrait' data-filter='portrait'>#Portrait</a>

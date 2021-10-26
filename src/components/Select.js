@@ -27,7 +27,7 @@ class Select {
                 <div>
                     <p>Trier par : </p>
                 </div>
-                <select class='select-search' role='tri' aria-label='systeme de tri'>
+                <select class='select-search' role='tri'>
                     <option class='select-option' value='popularity'>Popularité</option>
                     <option class='select-option' value='date'>Date</option>
                     <option class='select-option' value='title'>Titre</option>

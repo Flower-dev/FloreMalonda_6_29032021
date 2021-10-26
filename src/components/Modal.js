@@ -74,7 +74,7 @@ class Modal {
                                     ${this.modalBtnClose.outerHTML}
                                 </div>
 
-                                <h3 class='title-modal' aria-label ='Contact Me'>Contactez-moi ${this.name}</h3>
+                                <h3 class='title-modal'>Contactez-moi ${this.name}</h3>
 
                                 <div class='formData' id='formData'>
                                     <label for='first_name'>Prénom</label><br> 

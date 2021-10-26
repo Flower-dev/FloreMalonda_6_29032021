@@ -30,7 +30,7 @@ class Presentation  {
 
         return (`
             <div class='global_presentation'>
-                <div class='gp_presentation' aria-label='présentation du photographe'>
+                <div class='gp_presentation'>
                     <div class='title_avatar_page'>
                         <h2>${this.name}</h2>
                     </div>
